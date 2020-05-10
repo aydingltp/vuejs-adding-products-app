@@ -3,9 +3,14 @@
         <a class="navbar-brand" href="#">Ürün Listesi</a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <router-link
+                active-class = "active"
+                tag = "li"
+                to = "/urun-islemleri"
+                class = "nav-item"
+                >
                     <a class="nav-link" href="#">Ürün İşlemleri</a>
-                </li>
+                </router-link>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Ürün Çıkışı</a>
                 </li>
