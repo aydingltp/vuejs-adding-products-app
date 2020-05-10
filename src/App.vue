@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-header></app-header>
-    <app-product-container></app-product-container>
+    <router-view></router-view>
     <app-footer></app-footer>
 
   </div>
@@ -10,12 +10,12 @@
   import Header from "./components/shared/Header";
   import Footer from "./components/shared/Footer";
   import ProductSell from "./components/products/ProductSell";
+  import ProductList from "./components/products/ProductList";
 
  export default{
   components: {
     appHeader: Header,
     appFooter: Footer,
-    appProductContainer: ProductSell
   }
 
 

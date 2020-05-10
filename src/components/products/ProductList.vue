@@ -4,7 +4,7 @@
             <div class="col-12 mb-5 card mt-5 shadow">
                 <div class="card-body">
                     <h3>Ürün Listesi</h3>
-                    <hr>git
+                    <hr>
                     <table class="table table-hover table-striped table-bordered">
                         <thead>
                         <th>id</th>
@@ -23,7 +23,7 @@
                         </tr>
                         </tbody>
                     </table>
-                    <div class="alert alert-warning" v-else>
+                    <div class="alert alert-warning">
                         <strong>Henüz Burada Bir Kayıt Bulamadık</strong>
                         <br>
                         <small>Kayıt Eklemek için Ürün İşlemleri menüsünden yararlanabilirsiniz
