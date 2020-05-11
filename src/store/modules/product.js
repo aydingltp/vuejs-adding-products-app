@@ -1,7 +1,7 @@
 const state = {
     products : []
 }
-const getters ={
+const getters = {
     getProducts(state){
         return state.products;
     },
@@ -9,18 +9,18 @@ const getters ={
 
     }
 }
-const mutations{
+const mutations = {
    updateProductList(state,product){
        stage.products.push(product);
     }
 }
-const actions{
+const actions = {
     initApp({commit}){
         //vue resource işlemleri
-    }
+    },
     saveProduct({commit} , payload){
         //vue resource işlemleri
-    }
+    },
     sellProduct({commit} , payload){
         // vue resource işlemleri
     }
