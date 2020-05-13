@@ -19,7 +19,7 @@
                     </div>
                     <div class="form-group">
                         <label>Açıklama</label>
-                        <textarea  v-model="product.desciption" cols="30" rows="5" placeholder="Ürüne ait bir açıklama giriniz..."
+                        <textarea  v-model="product.description" cols="30" rows="5" placeholder="Ürüne ait bir açıklama giriniz..."
                                   class="form-control"></textarea>
                     </div>
                     <hr>

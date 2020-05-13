@@ -12,18 +12,20 @@ const getters = {
 }
 const mutations = {
    updateProductList(state,product){
-       stage.products.push(product);
+       state.products.push(product);
     }
 }
 const actions = {
     initApp({commit}){
         //vue resource işlemleri
     },
-    saveProduct({commit} , payload){
+    saveProduct({commit, state} , product){
         //vue resource işlemleri
-        Vue.http.post("https://urun-islemleri-56f6d.firebaseio.com/products.json", payload)
+        Vue.http.post("https://urun-islemleri-56f6d.firebaseio.com/products.json", product)
             .then((response) => {
-                console.log(response);
+                product.key = response.body.name;
+                commit("updateProductList", product);
+                console.log(state.products);
             })
     },
     sellProduct({commit} , payload){
