@@ -22,7 +22,7 @@ const actions = {
     saveProduct({dispatch, commit, state} , product){
         //vue resource işlemleri
         Vue.http.post("https://urun-islemleri-56f6d.firebaseio.com/products.json", product)
-            .then((response) => {
+          .then((response) => {
                 /*Ürün Listesinin Güncellenmesi */
                 product.key = response.body.name;
                 commit("updateProductList", product);
@@ -32,7 +32,8 @@ const actions = {
                     sale : 0,
                     count: product.count
                 }
-                console.log(state.products);
+                dispatch("setTradeResult", tradeResult)
+                //console.log(state.products);
             })
     },
     sellProduct({commit} , payload){

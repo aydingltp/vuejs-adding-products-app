@@ -1,4 +1,4 @@
-export const GetTradeResult = (state) => {
+export const getTradeResult = (state) => {
     return{
         purchase: state.purchase,
         sale: state.sale,

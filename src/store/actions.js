@@ -9,10 +9,6 @@ export const setTradeResult = ({state, commit}, tradeResult) => {
     Vue.http.put("https://urun-islemleri-56f6d.firebaseio.com/trade-result.json", tradeData)
     .then(response => {
         console.log(response);
-        console.log(response.purchase);
-        console.log(response.sale);
-        console.log(response.balance);
-
     })
 
 }
