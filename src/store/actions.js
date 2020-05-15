@@ -13,5 +13,9 @@ export const setTradeResult = ({state, commit}, tradeResult) => {
 
 }
 export const getTradeResult = ({commit}) => {
-
+    Vue.http.get("https://urun-islemleri-56f6d.firebaseio.com/trade-result.json")
+      .then(response => {
+          console.log(response);
+          commit("updateTradeResult", response.body)
+      })
 } 
