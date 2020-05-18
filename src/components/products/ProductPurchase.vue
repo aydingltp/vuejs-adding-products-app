@@ -38,13 +38,15 @@
                     title: "",
                     count: null,
                     price: null,
-                    description: ""
+                    description: "",
+                    saveButtonClicked: false
                 }
             }
         },
         methods : {
             saveProduct(){
                 this.$store.dispatch("saveProduct", this.product);
+                this.saveButtonClicked = true;
             }
         },
         computed:{
@@ -58,7 +60,7 @@
             }
         },
         beforeRouteLeave(to, from, next){
-            if(this.product.title.length > 0 || this.product.count > 0 || this.product.price > 0 || this.product.description.length > 0)
+            if((this.product.title.length > 0 || this.product.count > 0 || this.product.price > 0 || this.product.description.length > 0) && !this.saveButtonClicked)
             {
                 if(confirm("Kaydedilmemiş değişiklikleriniz var. Yine de çıkmak istiyormusunuz?"))
                 {
