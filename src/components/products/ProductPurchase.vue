@@ -1,5 +1,11 @@
 <template>
     <div class="container">
+        <div class="loading" :style="isLoading ">
+            <div class="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-6 offset-3 pt-3 card mt-5 shadow">
                 <div class="card-body">
@@ -38,9 +44,9 @@
                     title: "",
                     count: null,
                     price: null,
-                    description: "",
-                    saveButtonClicked: false
-                }
+                    description: ""
+                },
+                saveButtonClicked: false 
             }
         },
         methods : {
@@ -56,6 +62,18 @@
                 }
                 else{
                     return true;
+                }
+            },
+            isLoading(){
+                if (this.saveButtonClicked) {
+                     return{
+                          display: "block" 
+                     }
+                }
+                else{
+                    return{
+                        display: "none "
+                    }
                 }
             }
         },
