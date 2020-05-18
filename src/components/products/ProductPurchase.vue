@@ -23,7 +23,7 @@
                                   class="form-control"></textarea>
                     </div>
                     <hr>
-                    <button @click="saveProduct" :disabled="saveEnabled" class="btn btn-primary">Kaydet</button>
+                    <button @click="saveProduct" :disabled = "saveEnabled" class="btn btn-primary">Kaydet</button>
                 </div>
             </div>
         </div>
@@ -49,13 +49,33 @@
         },
         computed:{
             saveEnabled(){
-                if(this.product.title.length > 0 && this.product.count.length > 0 && this.product.price.length > 0 && this.product.description.length > 0 ){
+                if(this.product.title.length > 0 && this.product.count > 0 && this.product.price > 0 && this.product.description.length > 0 ){
                     return false;                    
                 }
                 else{
                     return true;
                 }
             }
+        },
+        beforeRouteLeave(to, from, next){
+            if(this.product.title.length > 0 || this.product.count > 0 || this.product.price > 0 || this.product.description.length > 0)
+            {
+                if(confirm("Kaydedilmemiş değişiklikleriniz var. Yine de çıkmak istiyormusunuz?"))
+                {
+                    next(); 
+                }
+                else
+                {
+                    next(false);
+                }  
+
+            }
+            else
+            {
+                next();    
+            }
+            
+            
         }
 
     }

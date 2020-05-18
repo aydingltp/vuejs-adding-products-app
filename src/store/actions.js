@@ -2,7 +2,7 @@ import Vue from "vue";
 
 export const setTradeResult = ({state, commit}, tradeResult) => {
     commit("updateTradeResult", tradeResult);
-    let tradeData={
+    let tradeData = {
         purchase: state.purchase,
         sale: state.sale  
     }
