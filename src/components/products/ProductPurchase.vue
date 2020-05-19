@@ -72,7 +72,7 @@
                 }
                 else{
                     return{
-                        display: "none "
+                        display: "none"
                     }
                 }
             }
